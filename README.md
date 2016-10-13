@@ -1,5 +1,5 @@
 # PrefixLog
-A simple debug log for c++ with a focus on ease of use.
+A simple header-only debug log for c++ with a focus on ease of use.
 
 It can prefix multi-line text automaticaly, while still behaving just like `std::cout`.
 
