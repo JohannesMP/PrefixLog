@@ -48,12 +48,12 @@ STOP
 ```c++
 struct Foo 
 { 
-  Foo(string s) : text("Foo contains '" + s + "'") {}
-  std::string text;
+  Foo(string s) : bar("Foo contains '" + s + "'") {}
+  std::string bar;
 };
 std::ostream &operator<<(std::ostream& os, const Foo& foo) 
 {
-  return os << foo.text; 
+  return os << foo.bar; 
 }
 
 // ...
