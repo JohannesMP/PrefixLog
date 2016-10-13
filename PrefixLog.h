@@ -12,8 +12,8 @@
  * this project) for whatever you want. Personal use, Educational use, 
  * Corporate use, Military use, and all other uses are OK!
  *
- * I offer no warranty on anything in this project, and you are using it of 
- * your own free will at your own risk. I've tried my best to ensure that 
+ * I offer no warranty on anything in this project, and you are using it at
+ * your own risk, of your own free will. I've tried my best to ensure that 
  * there are no gaping security holes where using this software might erase
  * your  hard drive or give your dog diarrhea, but it might happen. I'm sorry. 
  * However, I warned you, so you can't sue me. Suing people over free software
