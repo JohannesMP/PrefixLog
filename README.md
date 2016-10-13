@@ -1,7 +1,7 @@
 # PrefixLog
-A simple debug log for c++ with a focus on usability.
+A simple debug log for c++ with a focus on ease of use.
 
-It can prefix any text printed automaticaly, while still behaving just like `std::cout`.
+It can prefix multi-line text automaticaly, while still behaving just like `std::cout`.
 
 ======
 
@@ -19,7 +19,7 @@ std::cout << "STOP\n";
 //STOP
 ```
 
-#### 2) Works like std::cout:
+#### 2) Like std::cout:
 ```c++
 Log(5) << "It works "            // New line
        << "just like std::cout"  // Still same line
@@ -59,7 +59,6 @@ Log("  INFO: ")
   << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
   << "And std::cout overloaded objects: " << Foo("bar");
 
-//OUTPUT:
 //  INFO: It supports manipulators: 1.5000
 //  INFO: And std::cout overloaded objects: [Foo:'bar']
 ```
