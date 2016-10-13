@@ -5,17 +5,6 @@ It can prefix any text printed automaticaly, while still behaving just like `std
 
 ======
 
-#### Function Fallback:
-
-```c++
-std::cout << "START\n";
-Log("Can be used as a simple function. Output has automatic newline at end.");
-std::cout << "STOP\n";
-
-//START
-//Can be used as a simple function. Output has automatic newline at end.
-//STOP
-```
 
 #### Setting Prefix:
 ```c++
@@ -75,6 +64,18 @@ Log("  INFO: ")
 //OUTPUT:
 //  INFO: It supports manipulators: 1.5000
 //  INFO: And std::cout overloaded objects: Foo contains 'secret'
+```
+
+#### Function Fallback:
+```c++
+std::cout << "START\n";
+Log("Can also be used as a simple function. Output has automatic newline at end.");
+Log("Unlike prefix mode, a the last trailing newline is not ignored\n");
+std::cout << "STOP\n";
+
+//START
+//Can also be used as a simple function. Output has automatic newline at end.
+//STOP
 ```
 
 ======
