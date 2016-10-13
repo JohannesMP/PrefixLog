@@ -82,5 +82,5 @@ Please see Test.cpp for detailed usage.
   * It should be easy to set up a static configuration object read by `PrefixLogProxy`, and used to print to a defined log file or stream whenever it writes to `std::cout` internally.
   
 * Improve prefixing on newlines in strings
-  * Currently newline characters in strings just use a find and replace to add the prefix.
+  * Currently newline characters in strings just use `find` and `replace` to add the prefix.
   * Performance can probably be improved by walking the string with a pointer.
