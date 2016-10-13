@@ -11,11 +11,10 @@ It can prefix any text printed automaticaly, while still behaving just like `std
 std::cout << "START\n";
 Log("Can be used as a simple function. Output has automatic newline at end.");
 std::cout << "STOP\n";
-/* OUTPUT:
-START
-Can be used as a simple function. Output has automatic newline at end.
-STOP
-*/
+
+//START
+//Can be used as a simple function. Output has automatic newline at end.
+//STOP
 ```
 
 #### Setting Prefix:
@@ -23,13 +22,12 @@ STOP
 std::cout << "START\n";
 Log("***| ") << "This Log\nadds a prefix\nto every line.";
 std::cout << "STOP\n";
-/* OUTPUT:
-START
-***| This Log 
-***| adds a prefix
-***| to every line
-STOP
-*/
+
+//START
+//***| This Log 
+//***| adds a prefix
+//***| to every line
+//STOP
 ```
 
 #### Insertion Operators:
@@ -38,10 +36,9 @@ Log(5) << "It supports "
        << "insertion operators"  // still same line
        << std::endl              // new line
        << "and std::endl";
-/* OUTPUT:
-     It supports insertion operators
-     and std::endl.
-*/
+
+//     It supports insertion operators
+//     and std::endl.
 ```
 
 #### Trailing Newlines:
@@ -50,12 +47,11 @@ std::cout << "START\n";
 Log(5, '_') << " You don't need \\n (or std::endl) as the last character\n"; 
 Log(5, '_') << " But it handles them in case you forget :)" << std::endl;
 std::cout << "STOP\n";
-/* OUTPUT:
-START
-_____ You don't need \n or std::endl as the last character
-_____ But it handles them in case you forget :)
-STOP
-*/
+
+//START
+//_____ You don't need \n or std::endl as the last character
+//_____ But it handles them in case you forget :)
+//STOP
 ```
 
 #### Manipulators and Overloads:
@@ -75,10 +71,10 @@ std::ostream &operator<<(std::ostream& os, const Foo& foo)
 Log("  INFO: ") 
   << "It works with manipulators: " << fixed << setprecision(4) << 1.5 << endl
   << "And std::cout overloaded objects: " << Foo("secret");
-/* OUTPUT:
-  INFO: It works with manipulators: 1.5000
-  INFO: And std::cout overloaded objects: Foo contains 'secret'
-*/
+
+//OUTPUT:
+//  INFO: It works with manipulators: 1.5000
+//  INFO: And std::cout overloaded objects: Foo contains 'secret'
 ```
 
 ======
