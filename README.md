@@ -16,10 +16,11 @@ Log("***| ") << "This Log prefixes what it prints,\neven if more than one line."
 
 #### Insertion Operators:
 ```c++
-Log(5) << "It has supports " << "insertion operators" << std::endl
+Log(5) << "It supports" << " insertion operators" << std::endl
        << "and std::endl";
 /* OUTPUT:
-     It has supports insertion operators
+     It supports 
+     insertion operators
      and std::endl.
 */
 ```
