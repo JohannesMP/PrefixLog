@@ -56,7 +56,7 @@ ostream &operator<<(ostream& os, const Foo& foo) {
 // ...
 
 Log("  INFO: ") 
-  << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
+  << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << "\n"
   << "And std::cout overloaded objects: " << Foo("bar");
 
 //  INFO: It supports manipulators: 1.5000
