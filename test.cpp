@@ -3,7 +3,7 @@
 #include "PrefixLog.h"
 
 using namespace std;
-using namespace Debug;
+using Debug::Log;
 
 struct Foo { 
   Foo(string s) : text("Foo contains '" + s + "'") {}
@@ -13,21 +13,27 @@ ostream &operator<<(ostream& os, const Foo& foo) { return os << foo.text; }
 
 int main()
 {
-  cout << "DEMO 1:\n";
-  Log(5) << "This Log prefixes what it prints,\neven if more than one line.";
+  // Can be used as a raw function call
+  Log("1) Basic Usage:"); 
+  Log("***| ") << "This Log adds a prefix\nto every line \nand an automatic newline when done.";
 
-  cout << "DEMO 2:\n";
-  Log("|***|") << " It has "<< "insertion operator" << " support" 
-    << endl << " which works with std::endl.";
-  
-  cout << "DEMO 3:\n";
-  Log(5, '_') << " You don't need \\n or std::endl as the last character\n"; 
-  Log(5, '_') << " But it handles them in case you forget :)" << endl;
+  Log("2) Insertion Operators:");
+  Log(5) << "It supports "         // Starting a line
+         << "insertion operators"  // Still same line
+         << endl                   // New line
+         << "and std::endl";
 
-  cout << "DEMO 4:\n";
+  Log("3) Trailing Newlines:");
+  Log(5, '-') << " You don't need \\n (or std::endl) as the last character\n"; 
+  Log(5, '+') << " But it handles them in case you forget :)" << std::endl;
+
+  Log("4) Manipulators and Overloads:");
   Log("  INFO: ") 
     << "It works with manipulators: " << fixed << setprecision(4) << 1.5 << endl
     << "And std::cout overloaded objects: " << Foo("secret");
+
+  // By itself is just a newline
+  Log();
 }
 
 

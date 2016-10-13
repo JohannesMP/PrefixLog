@@ -38,26 +38,40 @@
 */
 
 
-#include <string>
 #include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+
+// typedefs
+typedef std::string String;
 
 namespace Debug
 {
   struct PrefixLogProxy
   {
-    std::string prefix_;      // What to prefix each line in the log with
-    std::string next_prefix_; // Just cached for when we newline
-    bool is_prefixed_;        // Has the current line been prefixed?
+    String prefix_;      // What to prefix each line in the log with
+    String next_prefix_; // Just cached for when we newline
+    bool   is_prefixed_; // Has the current line been prefixed?
+    int    line_count_;  // How many lines have been printed?
 
-    PrefixLogProxy(const std::string prefix)
+    PrefixLogProxy(const String prefix)
       : prefix_(prefix)
       , next_prefix_("\n" + prefix_)
       , is_prefixed_(false)
+      , line_count_(0)
     {}
     
     ~PrefixLogProxy()
     {
-      if(is_prefixed_) std::cout << std::endl;
+      // Handle trailing newline
+      if(is_prefixed_) 
+        cout << endl;
+
+      // Handle standalone call
+      if(line_count_ < 1) 
+        cout << prefix_ << endl;
     }
 
     // Helper function for inserting the prefix
@@ -66,7 +80,8 @@ namespace Debug
       if(!is_prefixed_)
       {
         is_prefixed_ = true;
-        std::cout << prefix_;
+        line_count_++;
+        cout << prefix_;
       }
     }
 
@@ -75,18 +90,18 @@ namespace Debug
     PrefixLogProxy &operator<< (const T &obj)
     {
       HandlePrefix();
-      std::cout << obj;
+      cout << obj;
       return *this;
     }
 
     // << operator specifically for c-style strings
     PrefixLogProxy &operator<< (const char *c_str)
     {
-      return (*this) << std::string(c_str);
+      return (*this) << String(c_str);
     }
 
-    // << operator specifically for std::strings
-    PrefixLogProxy &operator<< (std::string str)
+    // << operator specifically for Strings
+    PrefixLogProxy &operator<< (String str)
     {
       HandlePrefix();
 
@@ -95,7 +110,7 @@ namespace Debug
       while (true) 
       {
           pos = str.find("\n", pos);
-          if(pos == std::string::npos) 
+          if(pos == String::npos) 
             break;
 
           if(pos == str.size()-1)
@@ -108,7 +123,7 @@ namespace Debug
           pos += next_prefix_.length();
       }
 
-      std::cout << str;
+      cout << str;
 
       return *this;
     }
@@ -124,29 +139,29 @@ namespace Debug
       return manip(*this);
     }
 
-    // This is the type of std::cout
+    // This is the type of cout
     typedef std::basic_ostream<char, std::char_traits<char> > CoutType;
-    // This is the function signature of std::endl
+    // This is the function signature of endl
     typedef CoutType& (*StandardEndLine)(CoutType&);
 
-    // Handle << std::endl
+    // Handle << endl
     PrefixLogProxy& operator<<(StandardEndLine manip)
     {
       HandlePrefix();
       is_prefixed_  = false;
       // Call, but don't return.
-      manip(std::cout);
+      manip(cout);
       return *this;
     }
   };
 
-  PrefixLogProxy Log(const std::string& prefix)
+  PrefixLogProxy Log(const String& prefix)
   {
     return PrefixLogProxy(prefix);
   }
 
   PrefixLogProxy Log(int indent = 2, unsigned char padding = ' ')
   {
-    return PrefixLogProxy(std::string(indent, padding));
+    return PrefixLogProxy(String(indent, padding));
   }
 }
