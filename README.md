@@ -16,8 +16,8 @@ Log("***| ") << "This Log prefixes what it prints,\neven if more than one line."
 
 #### Insertion Operators:
 ```c++
-Log(5) << " It has " << "insertion operator" << " support" 
-       << std::endl << " and works with std::endl.";
+Log(5) << "It has " << "insertion operator" << " support" 
+       << std::endl << "which works with std::endl.";
 /* OUTPUT:
      It has insertion operator support
      which works with std::endl.
