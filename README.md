@@ -1,20 +1,33 @@
 # PrefixLog
 A simple debug log for c++ with a focus on usability.
 
-It prefixes any text printed, while still behaving just like `std::cout`.
+It can prefix any text printed automaticaly, while still behaving just like `std::cout`.
 
 ======
 
-#### Basic Usage:
+#### Function Fallback:
+
 ```c++
 std::cout << "START\n";
-Log("***| ") << "This Log adds a prefix\nto every line \n and an automatic newline when done.";
+Log("Can be used as a simple function. Output has automatic newline at end.");
 std::cout << "STOP\n";
 /* OUTPUT:
 START
-***| This Log adds a prefix
+Can be used as a simple function. Output has automatic newline at end.
+STOP
+*/
+```
+
+#### Setting Prefix:
+```c++
+std::cout << "START\n";
+Log("***| ") << "This Log\nadds a prefix\nto every line.";
+std::cout << "STOP\n";
+/* OUTPUT:
+START
+***| This Log 
+***| adds a prefix
 ***| to every line
-***| and an automatic newline when done.
 STOP
 */
 ```
