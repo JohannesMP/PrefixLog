@@ -36,7 +36,7 @@
  *
  * Don't be a jerk. Enjoy your free software! :)
 */
-
+#pragma once
 
 #include <iostream>
 #include <string>
