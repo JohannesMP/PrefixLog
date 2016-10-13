@@ -30,15 +30,15 @@ std::cout << "STOP\n";
 //STOP
 ```
 
-#### Insertion Operators:
+#### Works like std::cout:
 ```c++
-Log(5) << "It supports " 
-       << "insertion operators"  // still same line
-       << std::endl              // new line
-       << "and std::endl";
+Log(5) << "It works "            // New line
+       << "just like std::cout"  // Still same line
+       << std::endl              // New line
+       << "and supports std::endl.";
 
-//     It supports insertion operators
-//     and std::endl.
+//     It works just like std::cout
+//     and supports std::endl.
 ```
 
 #### Trailing Newlines:
@@ -69,11 +69,11 @@ std::ostream &operator<<(std::ostream& os, const Foo& foo)
 // ...
 
 Log("  INFO: ") 
-  << "It works with manipulators: " << fixed << setprecision(4) << 1.5 << endl
+  << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
   << "And std::cout overloaded objects: " << Foo("secret");
 
 //OUTPUT:
-//  INFO: It works with manipulators: 1.5000
+//  INFO: It supports manipulators: 1.5000
 //  INFO: And std::cout overloaded objects: Foo contains 'secret'
 ```
 
