@@ -17,7 +17,7 @@ Log("***| ") << "This Log prefixes what it prints,\neven if more than one line."
 #### Insertion Operators:
 ```c++
 Log(5) << " It has " << "insertion operator" << " support" 
-       << endl << " and works with std::endl.";
+       << std::endl << " and works with std::endl.";
 /* OUTPUT:
      It has insertion operator support
      which works with std::endl.
@@ -27,7 +27,7 @@ Log(5) << " It has " << "insertion operator" << " support"
 #### Trailing Newlines:
 ```c++
 Log(5, '_') << " You don't need \\n or std::endl as the last character\n"; 
-Log(5, '_') << " But it handles them in case you forget :)" << endl;
+Log(5, '_') << " But it handles them in case you forget :)" << std::endl;
 /* OUTPUT:
 _____ You don't need \n or std::endl as the last character
 _____ But it handles them in case you forget :)
@@ -39,9 +39,9 @@ _____ But it handles them in case you forget :)
 struct Foo 
 { 
   Foo(string s) : text("Foo contains '" + s + "'") {}
-  string text;
+  std::string text;
 };
-ostream &operator<<(ostream& os, const Foo& foo) 
+std::ostream &operator<<(std::ostream& os, const Foo& foo) 
 {
   return os << foo.text; 
 }
