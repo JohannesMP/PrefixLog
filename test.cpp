@@ -6,10 +6,12 @@ using namespace std;
 using Debug::Log;
 
 struct Foo { 
-  Foo(string s) : text("Foo contains '" + s + "'") {}
-  string text;
+  Foo(string n) : name(n) {}
+  string name;
 };
-ostream &operator<<(ostream& os, const Foo& foo) { return os << foo.text; }
+ostream &operator<<(ostream& os, const Foo& foo) { 
+  return os << "[Foo:'" << foo.name << "']"; 
+}
 
 int main()
 {
@@ -29,7 +31,7 @@ int main()
   Log("4) Manipulators and Overloads:");
   Log("  INFO: ") 
     << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
-    << "And std::cout overloaded objects: " << Foo("secret");
+    << "And std::cout overloaded objects: " << Foo("bar");
 
   Log("5) Function Fallback:");
   Log("- Can be used as standalone function.");

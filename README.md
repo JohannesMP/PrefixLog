@@ -45,25 +45,23 @@ std::cout << "STOP\n";
 
 #### 4) Manipulators and Overloads:
 ```c++
-struct Foo 
-{ 
-  Foo(string s) : bar("Foo contains '" + s + "'") {}
-  std::string bar;
+struct Foo { 
+  Foo(string n) : name(n) {}
+  string name;
 };
-std::ostream &operator<<(std::ostream& os, const Foo& foo) 
-{
-  return os << foo.bar; 
+ostream &operator<<(ostream& os, const Foo& foo) { 
+  return os << "[Foo:'" << foo.name << "']"; 
 }
 
 // ...
 
 Log("  INFO: ") 
   << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
-  << "And std::cout overloaded objects: " << Foo("secret");
+  << "And std::cout overloaded objects: " << Foo("bar");
 
 //OUTPUT:
 //  INFO: It supports manipulators: 1.5000
-//  INFO: And std::cout overloaded objects: Foo contains 'secret'
+//  INFO: And std::cout overloaded objects: [Foo:'bar']
 ```
 
 #### 5) Function Fallback:
