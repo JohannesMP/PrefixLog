@@ -19,8 +19,7 @@ Log("***| ") << "This Log prefixes what it prints,\neven if more than one line."
 Log(5) << "It supports" << " insertion operators" << std::endl
        << "and std::endl";
 /* OUTPUT:
-     It supports 
-     insertion operators
+     It supports insertion operators
      and std::endl.
 */
 ```
