@@ -5,8 +5,8 @@
  * _I_ am the software author - JohannesMP on Github.
  * _You_ are the user of this software. You might be a _we_, and that's OK!
  *
- * This is free software. I will never charge you to use, license, or obtain 
- * this software. Doing so would make me a jerk.
+ * This is free, open source software. I will never charge you to use,
+ * license, or obtain this software. Doing so would make me a jerk.
  *
  * You may use this code (and by "code" I mean _anything_ contained within 
  * this project) for whatever you want. Personal use, Educational use, 
@@ -16,8 +16,8 @@
  * your own risk, of your own free will. I've tried my best to ensure that 
  * there are no gaping security holes where using this software might erase
  * your hard drive or give your dog diarrhea, but it might happen. I'm sorry. 
- * However, I warned you, so you can't sue me. Suing people over free software
- * would make you a jerk.
+ * However, I warned you, so you can't sue me. Suing people over free 
+ * software would make you a jerk.
  *
  * If you find bugs, it would be nice if you let me know so I can fix them.
  * You don't have to, but it would be appreciated.
