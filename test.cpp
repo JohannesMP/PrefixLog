@@ -1,9 +1,9 @@
+#include <string>
 #include <iostream>
 #include <iomanip>
 #include "PrefixLog.h"
 
 using namespace std;
-using Debug::Log;
 
 struct Foo { 
   Foo(string n) : name(n) {}
@@ -15,18 +15,20 @@ ostream &operator<<(ostream& os, const Foo& foo) {
 
 int main()
 {
+  using PrefixLog::Log;
+
   Log("1) Setting Prefix:"); 
   Log("***| ") << "This Log\nadds a prefix\nto every line.";
 
   Log("2) Works like std::cout:");
   Log(5) << "It works "            // New line
          << "just like std::cout"  // Still same line
-         << std::endl              // New line
+         << endl                   // New line
          << "and supports std::endl.";
 
   Log("3) Trailing Newlines:");
   Log(5, '-') << " You don't need \\n (or std::endl) as the last character"; 
-  Log(5, '+') << " But it handles them in case you forget :)" << std::endl;
+  Log(5, '+') << " But it handles them in case you forget :)" << endl;
 
   Log("4) Manipulators and Overloads:");
   Log("  INFO: ") 
