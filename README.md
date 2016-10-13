@@ -20,7 +20,9 @@ STOP
 
 #### Insertion Operators:
 ```c++
-Log(5) << "It supports" << " insertion operators" << std::endl
+Log(5) << "It supports " 
+       << "insertion operators"  // still same line
+       << std::endl              // new line
        << "and std::endl";
 /* OUTPUT:
      It supports insertion operators
