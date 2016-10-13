@@ -1,7 +1,7 @@
 # PrefixLog
 A simple debug log for c++ debugging with a focus on usability.
 
-It behaves just like std::cout and allows you to prefix any text printed.
+It prefixes any text printed, while still behaving just like `std::cout`.
 
 ------
 
