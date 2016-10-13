@@ -10,7 +10,7 @@
  *
  * You may use this code (and by "code" I mean _anything_ contained within 
  * this project) for whatever you want. Personal use, Educational use, 
- * Corporate use, Military use, and all other uses are OK!
+ * Corporate use, and all other uses are OK!
  *
  * I offer no warranty on anything in this project, and you are using it at
  * your own risk, of your own free will. I've tried my best to ensure that 
