@@ -33,13 +33,13 @@ Log(5) << "It works "            // New line
 #### 3) Trailing Newlines:
 ```c++
 std::cout << "START\n";
-Log(5, '-') << " You don't need \\n (or std::endl) as the last character"; 
-Log(5, '+') << " But it handles them in case you forget :)" << std::endl;
+Log(5, '-') << " You don't need \\n (or std::endl) as the last character."; 
+Log(5, '+') << " But it still handles them in case you forget :)" << std::endl;
 std::cout << "STOP\n";
 
 //START
-//----- You don't need \n or std::endl as the last character
-//+++++ But it handles them in case you forget :)
+//----- You don't need \n or std::endl as the last character.
+//+++++ But it still handles them in case you forget :)
 //STOP
 ```
 
