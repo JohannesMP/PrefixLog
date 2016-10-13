@@ -33,7 +33,7 @@ Log(5) << "It works "            // New line
 #### Trailing Newlines:
 ```c++
 std::cout << "START\n";
-Log(5, '-') << " You don't need \\n (or std::endl) as the last character\n"; 
+Log(5, '-') << " You don't need \\n (or std::endl) as the last character"; 
 Log(5, '+') << " But it handles them in case you forget :)" << std::endl;
 std::cout << "STOP\n";
 
@@ -75,6 +75,8 @@ std::cout << "STOP\n";
 
 //START
 //Can also be used as a simple function. Output has automatic newline at end.
+//Unlike prefix mode, a the last trailing newline is not ignored
+//
 //STOP
 ```
 
