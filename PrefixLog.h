@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Don't Be a Jerk: The Open Source Software License.
  * Adapted from: https://github.com/evantahler/Dont-be-a-Jerk
- ******************************************************************************
+ *******************************************************************************
  * _I_ am the software author - JohannesMP on Github.
  * _You_ are the user of this software. You might be a _we_, and that's OK!
  *
@@ -40,6 +40,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using std::cout;
 using std::endl;
@@ -47,7 +48,7 @@ using std::endl;
 // typedefs
 typedef std::string String;
 
-namespace Debug
+namespace PrefixLog
 {
   struct PrefixLogProxy
   {
@@ -90,8 +91,9 @@ namespace Debug
     PrefixLogProxy &operator<< (const T &obj)
     {
       HandlePrefix();
-      cout << obj;
-      return *this;
+      std::stringstream stream;
+      stream << obj;
+      return (*this) << String(stream.str());
     }
 
     // << operator specifically for c-style strings
