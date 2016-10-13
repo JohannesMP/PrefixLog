@@ -6,7 +6,7 @@ It can prefix any text printed automaticaly, while still behaving just like `std
 ======
 
 
-#### Setting Prefix:
+#### 1) Setting Prefix:
 ```c++
 std::cout << "START\n";
 Log("***| ") << "This Log\nadds a prefix\nto every line.";
@@ -19,7 +19,7 @@ std::cout << "STOP\n";
 //STOP
 ```
 
-#### Works like std::cout:
+#### 2) Works like std::cout:
 ```c++
 Log(5) << "It works "            // New line
        << "just like std::cout"  // Still same line
@@ -30,7 +30,7 @@ Log(5) << "It works "            // New line
 //     and supports std::endl.
 ```
 
-#### Trailing Newlines:
+#### 3) Trailing Newlines:
 ```c++
 std::cout << "START\n";
 Log(5, '-') << " You don't need \\n (or std::endl) as the last character"; 
@@ -43,7 +43,7 @@ std::cout << "STOP\n";
 //STOP
 ```
 
-#### Manipulators and Overloads:
+#### 4) Manipulators and Overloads:
 ```c++
 struct Foo 
 { 
@@ -66,16 +66,16 @@ Log("  INFO: ")
 //  INFO: And std::cout overloaded objects: Foo contains 'secret'
 ```
 
-#### Function Fallback:
+#### 5) Function Fallback:
 ```c++
 std::cout << "START\n";
-Log("Can also be used as a simple function. Output has automatic newline at end.");
-Log("Unlike prefix mode, a the last trailing newline is not ignored\n");
+Log("- Can be used as standalone function.");
+Log("- Unlike prefix mode, the last trailing newline is not ignored!\n");
 std::cout << "STOP\n";
 
 //START
-//Can also be used as a simple function. Output has automatic newline at end.
-//Unlike prefix mode, a the last trailing newline is not ignored
+//- Can be used as standalone function.
+//- Unlike prefix mode, the last trailing newline is not ignored!
 //
 //STOP
 ```
