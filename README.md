@@ -3,7 +3,7 @@ A simple debug log for c++ with a focus on usability.
 
 It prefixes any text printed, while still behaving just like `std::cout`.
 
-------
+======
 
 #### Basic Usage:
 ```c++
@@ -68,6 +68,15 @@ Log("  INFO: ")
 */
 ```
 
-------
+======
 
 Please see Test.cpp for detailed usage.
+
+------
+
+
+### Todo
+
+* Log File Support
+  * Currently there is no support for outputting the printed log to a file automatically.
+  * It should be easy to set up a static configuration object read by `PrefixLogProxy`, and used to print to a defined log file or stream whenever it writes to std::cout.
