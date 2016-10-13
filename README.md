@@ -7,10 +7,14 @@ It prefixes any text printed, while still behaving just like `std::cout`.
 
 #### Basic Usage:
 ```c++
+std::cout << "START\n"
 Log("***| ") << "This Log prefixes what it prints,\neven if more than one line.";
+std::cout << "STOP\n"
 /* OUTPUT:
+START
 ***| This Log prefixes what it prints,
 ***| even if more than one line.
+STOP
 */
 ```
 
