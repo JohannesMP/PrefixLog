@@ -7,20 +7,20 @@ It prefixes any text printed, while still behaving just like `std::cout`.
 
 #### Basic Usage:
 ```c++
-Log(5) << "This Log prefixes what it prints,\neven if more than one line.";
+Log("***| ") << "This Log prefixes what it prints,\neven if more than one line.";
 /* OUTPUT:
-     This Log prefixes what it prints,
-     even if more than one line.
+***| This Log prefixes what it prints,
+***| even if more than one line.
 */
 ```
 
 #### Insertion Operators:
 ```c++
-Log("|***|") << " It has "<< "insertion operator" << " support" 
+Log(5) << " It has "<< "insertion operator" << " support" 
   << endl << " which works with std::endl.";
 /* OUTPUT:
-|***| It has insertion operator support
-|***| which works with std::endl.
+     It has insertion operator support
+     which works with std::endl.
 */
 ```
 
