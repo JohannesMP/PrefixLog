@@ -10,7 +10,9 @@ struct Foo {
   string name;
 };
 ostream &operator<<(ostream& os, const Foo& foo) { 
-  return os << "[Foo:'" << foo.name << "']"; 
+  return os << "[\n"                    // multi-line object output
+            << "  Foo:'" << foo.name << "'\n"
+            << "]"; 
 }
 
 int main()
@@ -33,7 +35,7 @@ int main()
   Log("4) Manipulators and Overloads:");
   Log("  INFO: ") 
     << "It supports manipulators: " << fixed << setprecision(4) << 1.5 << endl
-    << "And std::cout overloaded objects: " << Foo("bar");
+    << "And and objects, even if multi-line:\n" << Foo("bar");
 
   Log("5) Function Fallback:");
   Log("- Can be used as standalone function.");
