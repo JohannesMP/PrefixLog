@@ -57,7 +57,6 @@ Log("  INFO: ")
 */
 ```
 
-Given:
-```c++
+------
 
-```
+Please see Test.cpp for detailed usage.
