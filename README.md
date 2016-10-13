@@ -32,11 +32,15 @@ Log(5) << "It supports "
 
 #### Trailing Newlines:
 ```c++
+std::cout << "START\n";
 Log(5, '_') << " You don't need \\n (or std::endl) as the last character\n"; 
 Log(5, '_') << " But it handles them in case you forget :)" << std::endl;
+std::cout << "STOP\n";
 /* OUTPUT:
+START
 _____ You don't need \n or std::endl as the last character
 _____ But it handles them in case you forget :)
+STOP
 */
 ```
 
