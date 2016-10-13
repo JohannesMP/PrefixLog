@@ -8,12 +8,13 @@ It prefixes any text printed, while still behaving just like `std::cout`.
 #### Basic Usage:
 ```c++
 std::cout << "START\n";
-Log("***| ") << "This Log prefixes every line\nand automatically newlines the end.";
+Log("***| ") << "This Log adds a prefix\nto every line \n and an automatic newline when done.";
 std::cout << "STOP\n";
 /* OUTPUT:
 START
-***| This Log prefixes every line,
-***| and automatically newlines the end.
+***| This Log adds a prefix
+***| to every line
+***| and an automatic newline when done.
 STOP
 */
 ```
