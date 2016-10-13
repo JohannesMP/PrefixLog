@@ -1,4 +1,4 @@
-# SimpleLogCpp
+# PrefixLog
 A simple debug log for c++ debugging with a focus on usability.
 
 It behaves just like std::cout and allows you to prefix any text printed.
