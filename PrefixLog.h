@@ -157,12 +157,12 @@ namespace PrefixLog
     }
   };
 
-  PrefixLogProxy Log(const String& prefix)
+  inline PrefixLogProxy Log(const String& prefix)
   {
     return PrefixLogProxy(prefix);
   }
 
-  PrefixLogProxy Log(int indent = 2, unsigned char padding = ' ')
+  inline PrefixLogProxy Log(int indent = 2, unsigned char padding = ' ')
   {
     return PrefixLogProxy(String(indent, padding));
   }
