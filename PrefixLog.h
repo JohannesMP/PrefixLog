@@ -45,11 +45,11 @@
 using std::cout;
 using std::endl;
 
-// typedefs
-typedef std::string String;
-
 namespace PrefixLog
 {
+  // typedefs
+  typedef std::string String;
+  
   struct PrefixLogProxy
   {
     String prefix_;      // What to prefix each line in the log with
