@@ -92,6 +92,9 @@ Please see Test.cpp for detailed usage.
 
 ### Todo
 
+* Fix multi-line printing again
+  * See https://stackoverflow.com/a/27336634/928062
+
 * Log File Support
   * Currently there is no support for outputting the printed log to a file automatically.
   * It should be easy to set up a static configuration object read by `PrefixLogProxy`, and used to print to a defined log file or stream whenever it writes to `std::cout` internally.
