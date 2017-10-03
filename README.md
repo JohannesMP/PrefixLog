@@ -3,7 +3,7 @@ A simple header-only debug log for c++ with a focus on ease of use.
 
 It can prefix multi-line text automaticaly, while still behaving just like `std::cout`.
 
-======
+------
 
 
 #### 1) Setting Prefix:
@@ -83,7 +83,7 @@ std::cout << "STOP\n";
 //STOP
 ```
 
-======
+------
 
 Please see Test.cpp for detailed usage.
 
