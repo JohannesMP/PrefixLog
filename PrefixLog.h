@@ -91,9 +91,11 @@ namespace PrefixLog
     PrefixLogProxy &operator<< (const T &obj)
     {
       HandlePrefix();
-      std::stringstream stream;
-      stream << obj;
-      return (*this) << String(stream.str());
+      //std::stringstream stream;
+      //stream << obj;
+      //return (*this) << String(stream.str());
+      cout << obj;
+      return *this;
     }
 
     // << operator specifically for c-style strings
